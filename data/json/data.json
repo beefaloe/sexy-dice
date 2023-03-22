@@ -1,0 +1,22 @@
+{
+  "locations": {
+    "mild": ["Hair", "Face", "Lips", "Neck", "Shoulders", "Arms", "Hands", "Fingers", "Legs", "Feet"],    
+    "medium": ["Upper Chest", "Stomach", "Navel", "Flanks", "Thighs"],
+    "spicy": ["Breasts", "Nipples", "Bottom", "Genitals"]
+  },
+  "actions": {
+    "mild": ["Kiss", "Nibble", "Suck", "Lick", "Rub", "Breathe", "Nuzzle", "Scratch", "Any"],
+    "medium": ["Ice", "Mark", "Sauce", "Tap"]
+  }, 
+  "players": {
+    "puppyPile": ["Angelica", "Jeffrey", "Lynda"],
+    "directions": ["Left", "Right"]
+  }
+}
+
+
+
+
+
+
+
