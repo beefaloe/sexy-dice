@@ -72,6 +72,62 @@
     </div>
   </div>
 
+
+<div class='container pt-5'>
+  <div class='row'>
+    <div class='col'>
+      <div class='rounded rounded-lg shadow bg-white'>
+        <h2 class="m-0 bg-secondary text-white p-2 mb-2 text-uppercase rounded-top h1">Controls</h2>
+        
+        <div class="p-3 mb-2">
+          <h3 class="h5 text-uppercase border-bottom">Actions</h3>
+          <div class="form-check form-switch">
+            <input checked data-metric="action" data-flavor="mild" style="transform:scale(1.2)" class="control-switch form-check-input me-3" type="checkbox" id="actionMildSwitch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Mild</label>
+          </div>
+          <div class="form-check form-switch">
+            <input data-metric="action" data-flavor="medium" style="transform:scale(1.2)" class="control-switch  form-check-input me-3" type="checkbox" id="actionMediumSwitch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Medium</label>
+          </div>
+          <div class="form-check form-switch">
+            <input data-metric="action" data-flavor="spicy" style="transform:scale(1.2)" class="control-switch form-check-input me-3" type="checkbox" id="actionSpicySwitch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Spicy</label>
+          </div>
+        </div>
+
+        <div class="p-3 mb-2">
+          <h3 class="h5 text-uppercase border-bottom">Players</h3>
+          <div class="form-check form-switch">
+            <input checked data-metric="player" data-flavor="puppypile" style="transform:scale(1.2)" class="control-switch form-check-input me-3" type="checkbox" id="playersPuppyPileSwitch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Puppy Pile</label>
+          </div>
+          <div class="form-check form-switch">
+            <input data-metric="player" data-flavor="direction" style="transform:scale(1.2)" class="control-switch form-check-input me-3" type="checkbox" id="playersDirectionSwitch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Direction</label>
+          </div>          
+        </div>
+
+        <div class="p-3 mb-2">
+          <h3 class="h5 text-uppercase border-bottom">Locations</h3>
+          <div class="form-check form-switch">
+            <input checked data-metric="location" data-flavor="mild" style="transform:scale(1.2)" class="control-switch form-check-input me-3" type="checkbox" id="locationMildSwitch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Mild</label>
+          </div>
+          <div class="form-check form-switch">
+            <input data-metric="location" data-flavor="medium" style="transform:scale(1.2)" class="control-switch form-check-input me-3" type="checkbox" id="locationMediumSwitch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Medium</label>
+          </div>
+          <div class="form-check form-switch">
+            <input data-metric="location" data-flavor="spicy" style="transform:scale(1.2)" class="control-switch form-check-input me-3" type="checkbox" id="locationSpicySwitch">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Spicy</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   function getRand(num){
     return (Math.floor(Math.random() * num));
@@ -83,12 +139,18 @@
     .done(function(data){
       let timer = setInterval(function(){ }, 100);
       $('#rollBTN').click(function(){
+        // CLEAR THE TIMER
         clearInterval(timer);
 
+        // DISCOVER METRIC FLAVORS
+        
+
+        // UPDATE ACTIONS
         $('#action').html(data.actions.mild[getRand(data.actions.mild.length)]);
         $('#player').html(data.players.puppyPile[getRand(data.players.puppyPile.length)]);
         $('#location').html(data.locations.mild[getRand(data.locations.mild.length)]);
 
+        // SET RNADOM DURATION
         let duration = (Math.ceil(Math.random()*8)+1)*15;        
         $('#duration').html(duration);
 
